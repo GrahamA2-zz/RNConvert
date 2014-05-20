@@ -30,6 +30,6 @@
 	conversionTable["M".charCodeAt(0)] = 1000;
 	
 	function convert( value ) {
-		return conversionTable[value.charCodeAt(0)];
+		return conversionTable[value.charCodeAt(0)]
 	}	
 	

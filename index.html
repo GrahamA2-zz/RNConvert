@@ -1,53 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<meta charset = "utf-8">
-<title>Convert Roman Numerals To Arabic and Back</title>
-<head>
-<link rel="stylesheet" type="text/css" href="convert.css">
-<script src="abaricToRoman.js" type="text/javascript"></script>
-<script src="romanToAbaric.js" type="text/javascript"></script>
-<script>
-	window.onload = function(){
-		var button = document.getElementById("convert");
-		button.onclick = handleClick();
-		var button2 = document.getElementById("convertTo");
-		button2.onclick = handleClickTo();
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Windows (vers 14 February 2006), see www.w3.org">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Convert Roman Numerals To Arabic and Back Again
+    </title>
+    <!--link rel="stylesheet" type="text/css" href="convert.css"-->
+	<!-- Latest Bootstrap compiled and minified CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	
 
-	}
-	function handleClick(){
-		var div = document.getElementById("Result");
-		
-		return function(){
-			var sourceString = document.getElementById("numIn").value;
-			div.innerHTML = romanToAbaric(sourceString);
-		}
-	}
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script> 
 	
-	function handleClickTo(){
-		var div = document.getElementById("ResultTo");
-		
-		return function(){
-			var sourceString = document.getElementById("numTo").value;
-			div.innerHTML = abaricToRoman(sourceString);
-		}
-	}
-</script>
-</head>
-<body>
-	<H1>Roman Numberal to Arabic Conversion</H1>
-	From
-	<div id ="conversion">Value In:
-	
-			<input type="text" id="numIn">
-			<button id="convert">Convert</button>
-	
-		<div id="Result"></div>
+	<script src="abaricToRoman.js" type="text/javascript"></script>
+    <script src="romanToAbaric.js" type="text/javascript"></script>
+    <script type="text/javascript">
+	$(function(){
+		$("#conversionFrom").click ( function (){              
+				var sourceString = document.getElementById("numFrom").value;
+				try {
+					$("#resultFrom").html(romanToAbaric(sourceString));
+				} catch (err){
+					$("#resultFrom").html("")
+					alert(err);
+				}                       
+		});
+		$("#convertTo").click ( function (){    
+				var sourceString = document.getElementById("numTo").value;
+				try {
+					$("#ResultTo").html(abaricToRoman(sourceString)); 
+				} catch (err){
+					$("#ResultTo").html("")
+					alert(err);
+				}                       
+		});
+	});
+    </script>
+  </head>
+  <body role="document">
+  	<!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Roman Numberal to Arabic Conversion</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<br>
+	<div class="container theme-showcase" role="main">
+	<div class="page-header">
+		<p>From<p>
+		<div id="conversionFrom">
+		  Value In: <input type="text" id="numFrom"><button class="btn btn-lg btn-primary" id="convert">Convert</button>
+		  <p id="resultFrom"></p>
+		</div>To
+		<div id="conversionTo">
+		  Value In: <input type="text" id="numTo"><button class="btn btn-lg btn-primary" id="convertTo">Convert</button>
+		  <p id="ResultTo"></p>
+		</div>
+		</div>
 	</div>
-	To
-	<div id ="conversionTo">Value In:
-			<input type="text" id="numTo">
-			<button id="convertTo">Convert</button>
-		<div id="ResultTo"></div>
-	</div>
-</body>
+  </body>
+  
 </html>

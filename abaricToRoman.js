@@ -1,6 +1,11 @@
 	// Conversion based on http://turner.faculty.swau.edu/mathematics/materialslibrary/roman/
 	function abaricToRoman( input ){
 		var source = parseInt(input.trim());
+		
+		if (isNaN(source)){
+			throw "Conversion Error";
+		}
+		
 		var total = "";
 		//Convert to a long form 
 		while ( source >= 1000 ){
