@@ -21,20 +21,20 @@
     <script type="text/javascript">
 	$(function(){
 		$("#conversionFrom").click ( function (){              
-				var sourceString = document.getElementById("numFrom").value;
+				var sourceString = $("#numFrom").val();
 				try {
-					$("#resultFrom").html(romanToAbaric(sourceString));
+					$("#numTo").val(romanToAbaric(sourceString));
 				} catch (err){
-					$("#resultFrom").html("")
+					$("#numTo").val("")
 					alert(err);
 				}                       
 		});
-		$("#convertTo").click ( function (){    
-				var sourceString = document.getElementById("numTo").value;
+		$("#conversionTo").click ( function (){    
+				var sourceString = $("#numTo").val();
 				try {
-					$("#ResultTo").html(abaricToRoman(sourceString)); 
+					$("#numFrom").val(abaricToRoman(sourceString)); 
 				} catch (err){
-					$("#ResultTo").html("")
+					$("#numFrom").val("")
 					alert(err);
 				}                       
 		});
@@ -52,29 +52,86 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Roman Numberal to Arabic Conversion</a>
+          <a class="navbar-brand" href="#">Roman to Arabic Numeral Conversion</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 	<br>
 	<div class="container theme-showcase" role="main">
 	<div class="page-header">
-		<p>From<p>
-		<div id="conversionFrom">
-		  Value In: <input type="text" id="numFrom"><button class="btn btn-lg btn-primary" id="convert">Convert</button>
-		  <p id="resultFrom"></p>
-		</div>To
-		<div id="conversionTo">
-		  Value In: <input type="text" id="numTo"><button class="btn btn-lg btn-primary" id="convertTo">Convert</button>
-		  <p id="ResultTo"></p>
-		</div>
+	
+			  
+		<div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Convert To</h3>
+            </div>
+            <div class="panel-body">
+				<div class="col-lg-6">
+					<div class="input-group input-group-sm">
+						<span class="input-group-addon ">Value</span>
+      					<input type="text" class="form-control" id="numTo" placeholder="2014">
+      					<span class="input-group-btn">
+        				<button class="btn btn-primary" type="button" id="conversionTo">Convert!</button>
+      					</span>
+					</div><!-- /input-group -->
+  				</div><!-- /.col-lg-6 -->	
+            </div>
+         </div>
+	
+		<div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Convert From</h3>
+            </div>
+			<div class="panel-body">	
+				<div class="col-lg-6">
+					<div class="input-group input-group-sm">
+						<span class="input-group-addon ">Value</span>
+      					<input type="text" class="form-control" id="numFrom" placeholder="XI">
+      					<span class="input-group-btn">
+        				<button class="btn btn-primary" type="button" id="conversionFrom">Convert!</button>
+      					</span>
+					</div><!-- /input-group -->
+  				</div><!-- /.col-lg-6 -->	
+			</div> <!--panel-body-->	
+  			<table class="table">
+			  <tr>
+				<th>Roman</th>
+				<th>Abaric</th>
+			  </tr>
+			  <tr>
+				<td>I</td>
+				<td>1</td>
+			  </tr>
+			  <tr>
+				<td>V</td>
+				<td>5</td>
+			  </tr>
+			  <tr>
+				<td>X</td>
+				<td>10</td>
+			  </tr>
+			  <tr>
+				<td>L</td>
+				<td>50</td>
+			  </tr>
+			  <tr>
+				<td>C</td>
+				<td>100</td>
+			  </tr>
+			  <tr>
+				<td>D</td>
+				<td>500</td>
+			  </tr>
+			  <tr>
+				<td>M</td>
+				<td>1000</td>
+			  </tr>
+			</table>
+      	</div>
+
+		  
 		</div>
 	</div>
   </body>
