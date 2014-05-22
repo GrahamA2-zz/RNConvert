@@ -23,21 +23,35 @@
 		$("#conversionFrom").click ( function (){              
 				var sourceString = $("#numFrom").val();
 				try {
-					$("#numTo").val(romanToAbaric(sourceString));
+					var newValue = romanToAbaric(sourceString);
+					$("#numTo").val(newValue);
+					recordHistory(sourceString,newValue);
 				} catch (err){
 					$("#numTo").val("")
-					alert(err);
+					$(".alert").alert(err)
+
 				}                       
 		});
 		$("#conversionTo").click ( function (){    
 				var sourceString = $("#numTo").val();
 				try {
-					$("#numFrom").val(abaricToRoman(sourceString)); 
+					var newValue = abaricToRoman(sourceString);
+					$("#numFrom").val(newValue); 
+					recordHistory(sourceString,newValue);
 				} catch (err){
 					$("#numFrom").val("")
 					alert(err);
 				}                       
 		});
+		function recordHistory(from, to){
+			var history = document.getElementById("history");
+			var newItem = document.createElement("li");
+			newItem.class = "list-group-item";
+			newItem.innerHTML = from + " - " + to;
+			history.appendChild(newItem);
+		}
+		
+		
 	});
     </script>
   </head>
@@ -57,6 +71,7 @@
         <div class="navbar-collapse collapse">
         </div><!--/.nav-collapse -->
       </div>
+	  
     </div>
 	<br>
 	<div class="container theme-showcase" role="main">
@@ -130,10 +145,11 @@
 			  </tr>
 			</table>
       	</div>
-
-		  
 		</div>
+		<ul class="list-group" id="history">History
+		</ul>
 	</div>
+
   </body>
   
 </html>

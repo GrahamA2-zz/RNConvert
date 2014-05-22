@@ -6,6 +6,10 @@
 			throw "Conversion Error";
 		}
 		
+		if ( source > 10000 ){
+			throw "Size Error";
+		}
+
 		var total = "";
 		//Convert to a long form 
 		while ( source >= 1000 ){
