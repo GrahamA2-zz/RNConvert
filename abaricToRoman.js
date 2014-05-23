@@ -1,13 +1,17 @@
 	// Conversion based on http://turner.faculty.swau.edu/mathematics/materialslibrary/roman/
 	function abaricToRoman( input ){
-		var source = parseInt(input.trim());
 		
+		if (input.length === 0){
+			throw  "Enter a value to convert";
+		}
+		
+		var source = parseInt(input.trim());
 		if (isNaN(source)){
-			throw "Conversion Error";
+			throw "<b>" + input + "</b> is not a valid Arabic Numeral!";
 		}
 		
 		if ( source > 10000 || source < 1 ){
-			throw "Size Error";
+			throw "<b>" + source + "</b> is to big to convert!";
 		}
 
 		var total = "";

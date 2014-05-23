@@ -1,17 +1,17 @@
 	// Conversion based on http://turner.faculty.swau.edu/mathematics/materialslibrary/roman/
 	function romanToAbaric( input ){
+		if (input.length === 0){
+			throw  "Enter a value to convert";
+		}
+	
 		var source = input.trim().toUpperCase().split("");
 		var index = 0;
 		var total = 0;
 		while ( index < source.length){
 		var value1  = convert(source[index]);
 		var value2 = 0;
-			try {
-				if ( index < source.length - 1) {
-					value2 = convert(source[index + 1]);
-				}
-			} catch (e){
-				throw "Conversion Error";
+			if ( index < source.length - 1) {
+				value2 = convert(source[index + 1]);
 			}
 			if (value1 >= value2){
 				total += value1;
@@ -34,6 +34,10 @@
 	conversionTable["M".charCodeAt(0)] = 1000;
 	
 	function convert( value ) {
-		return conversionTable[value.charCodeAt(0)]
+	    var result = conversionTable[value.charCodeAt(0)];
+		if (result === undefined) {
+    		throw "<b>" + value + "</b> is not a valid Roman Numeral!";
+		}
+		return result;
 	}	
 	
