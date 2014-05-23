@@ -83,10 +83,10 @@
        	<h1>Roman Numerals</h1>
        	<p>A simple program for converting Roman numerals to Arabic and back using JavaScript and <a href=http://getbootstrap.com/>Bootstrap</a></p>
        	<p><a href="http://en.wikipedia.org/wiki/Roman_numerals" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-      	</div>
+    </div>
 	<div class="container theme-showcase" role="main">
 		<div class="row">
-		  <div class="col-lg-6">
+			<div class="col-lg-6">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 				  <h3 class="panel-title">Convert To</h3>
@@ -103,58 +103,59 @@
 					</div><!-- /.col-lg-6 -->	
 				</div>
 			 </div>
-		</div>
-		<div class="col-lg-6">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-				  <h3 class="panel-title">Convert From</h3>
+			 </div>
+			<div class="col-lg-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+					  <h3 class="panel-title">Convert From</h3>
+					</div>
+					<div class="panel-body">	
+						<div class="col-lg-6">
+							<div class="input-group input-group-sm">
+								<span class="input-group-addon ">Value</span>
+								<input type="text" class="form-control" id="numFrom" placeholder="XI">
+								<span class="input-group-btn">
+								<button class="btn btn-primary" type="button" id="conversionFrom">Convert!</button>
+								</span>
+							</div><!-- /input-group -->
+						</div><!-- /.col-lg-6 -->	
+					</div> <!--panel-body-->	
 				</div>
-				<div class="panel-body">	
-					<div class="col-lg-6">
-						<div class="input-group input-group-sm">
-							<span class="input-group-addon ">Value</span>
-							<input type="text" class="form-control" id="numFrom" placeholder="XI">
-							<span class="input-group-btn">
-							<button class="btn btn-primary" type="button" id="conversionFrom">Convert!</button>
-							</span>
-						</div><!-- /input-group -->
-					</div><!-- /.col-lg-6 -->	
-				</div> <!--panel-body-->	
-				
 			</div>
 		</div>
-		<div class="col-lg-6">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-				  <h3 class="panel-title">History</h3>
+		<div class="row" >
+			<div class="col-lg-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+					  <h3 class="panel-title">History</h3>
+					</div>
+					<div class="panel-body">	
+					<ul class="list-group" id="history">
+					</ul>
+					</div> <!--panel-body-->			
 				</div>
-				<div class="panel-body">	
-				<ul class="list-group" id="history">
-				</ul>
-				</div> <!--panel-body-->			
+			</div>
+			<div class="col-lg-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+					  <h3 class="panel-title">Convert From</h3>
+					</div>
+					<div class="panel-body">	
+					  <table class="table">
+					  <tr><th>Roman</th><th>Arabic</th></tr>
+					  <tr><td>I</td><td>1</td>
+					  </tr><td>V</td><td>5</td></tr>
+					  <tr><td>X</td><td>10</td></tr>
+					  <tr><td>L</td><td>50</td></tr>
+					  <tr><td>C</td><td>100</td></tr>
+					  <tr><td>D</td><td>500</td></tr>
+					  <tr><td>M</td><td>1000</td></tr>
+					</table>
+					</div> <!--panel-body-->	
+				</div>
 			</div>
 		</div>
-		<div class="col-lg-6">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-				  <h3 class="panel-title">Convert From</h3>
-				</div>
-				<div class="panel-body">	
-				  <table class="table">
-				  <tr><th>Roman</th><th>Arabic</th></tr>
-				  <tr><td>I</td><td>1</td>
-				  </tr><td>V</td><td>5</td></tr>
-				  <tr><td>X</td><td>10</td></tr>
-				  <tr><td>L</td><td>50</td></tr>
-				  <tr><td>C</td><td>100</td></tr>
-				  <tr><td>D</td><td>500</td></tr>
-				  <tr><td>M</td><td>1000</td></tr>
-				</table>
-				</div> <!--panel-body-->	
-			</div>
-		</div>
-		</div>
-
+	
 	</div>
 	<div id="conversionErrorModal" class="modal fade">
     <div class="modal-dialog">
