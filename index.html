@@ -78,33 +78,15 @@
 	  
     </div>
 	<br>
-<div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Confirmation</h4>
-            </div>
-            <div class="modal-body">
-                <p>Do you want to save changes you made to document before closing?</p>
-                <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 	<!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
        	<h1>Roman Numerals</h1>
-       	<p>A simple program for converting Roman numberals to Arabic and back using Javascript and <a href=http://getbootstrap.com/>Bootstrap</a></p>
+       	<p>A simple program for converting Roman numerals to Arabic and back using JavaScript and <a href=http://getbootstrap.com/>Bootstrap</a></p>
        	<p><a href="http://en.wikipedia.org/wiki/Roman_numerals" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
       	</div>
 	<div class="container theme-showcase" role="main">
-		<div class="page-header">
-		  
+		<div class="row">
+		  <div class="col-lg-6">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 				  <h3 class="panel-title">Convert To</h3>
@@ -121,7 +103,8 @@
 					</div><!-- /.col-lg-6 -->	
 				</div>
 			 </div>
-		
+		</div>
+		<div class="col-lg-6">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 				  <h3 class="panel-title">Convert From</h3>
@@ -137,45 +120,41 @@
 						</div><!-- /input-group -->
 					</div><!-- /.col-lg-6 -->	
 				</div> <!--panel-body-->	
-				<table class="table">
-				  <tr>
-					<th>Roman</th>
-					<th>Arabic</th>
-				  </tr>
-				  <tr>
-					<td>I</td>
-					<td>1</td>
-				  </tr>
-				  <tr>
-					<td>V</td>
-					<td>5</td>
-				  </tr>
-				  <tr>
-					<td>X</td>
-					<td>10</td>
-				  </tr>
-				  <tr>
-					<td>L</td>
-					<td>50</td>
-				  </tr>
-				  <tr>
-					<td>C</td>
-					<td>100</td>
-				  </tr>
-				  <tr>
-					<td>D</td>
-					<td>500</td>
-				  </tr>
-				  <tr>
-					<td>M</td>
-					<td>1000</td>
-				  </tr>
-				</table>
+				
 			</div>
 		</div>
-			<ul class="list-group" id="history">History
-				<li>Values</li>
-			</ul>
+		<div class="col-lg-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+				  <h3 class="panel-title">History</h3>
+				</div>
+				<div class="panel-body">	
+				<ul class="list-group" id="history">
+				</ul>
+				</div> <!--panel-body-->			
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+				  <h3 class="panel-title">Convert From</h3>
+				</div>
+				<div class="panel-body">	
+				  <table class="table">
+				  <tr><th>Roman</th><th>Arabic</th></tr>
+				  <tr><td>I</td><td>1</td>
+				  </tr><td>V</td><td>5</td></tr>
+				  <tr><td>X</td><td>10</td></tr>
+				  <tr><td>L</td><td>50</td></tr>
+				  <tr><td>C</td><td>100</td></tr>
+				  <tr><td>D</td><td>500</td></tr>
+				  <tr><td>M</td><td>1000</td></tr>
+				</table>
+				</div> <!--panel-body-->	
+			</div>
+		</div>
+		</div>
+
 	</div>
 	<div id="conversionErrorModal" class="modal fade">
     <div class="modal-dialog">
