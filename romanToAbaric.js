@@ -4,11 +4,17 @@
 		var index = 0;
 		var total = 0;
 		while ( index < source.length){
+		try {
 			var value1 = convert(source[index]);
+					} catch (e){
+				throw "Conversion Error";
+			}
 			var value2 = 0;
 			try {
 				value2 = convert(source[index + 1]);
-			} catch (e){}
+			} catch (e){
+				throw "Conversion Error";
+			}
 			if (value1 >= value2){
 				total += value1;
 				index++;

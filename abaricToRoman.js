@@ -6,12 +6,12 @@
 			throw "Conversion Error";
 		}
 		
-		if ( source > 10000 ){
+		if ( source > 10000 || source < 1 ){
 			throw "Size Error";
 		}
 
 		var total = "";
-		//Convert to a long form 
+		//Convert to a long form 		
 		while ( source >= 1000 ){
 			total = total + "M";
 			source -= 1000;
